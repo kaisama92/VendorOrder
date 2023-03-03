@@ -31,5 +31,39 @@ namespace VendorOrder.Tests
       string result = newOrder.Title;
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void SetTitle_SetsOrderTitle_String()
+    {
+      string title = "february";
+      string products = "apples";
+      Order newOrder = new Order(title, products);
+      string newTitle = "march";
+      newOrder.Title = newTitle;
+      string result = newOrder.Title;
+      Assert.AreEqual(newTitle, result);
+    }
+
+    [TestMethod]
+    public void GetProducts_ReturnsOrderProduct_String()
+    {
+      string title = "february";
+      string products = "apples";
+      Order newOrder = new Order(title, products);
+      string result = newOrder.Products;
+      Assert.AreEqual(products, result);
+    }
+
+    [TestMethod]
+    public void SetProducts_SetsOrderProducts_String()
+    {
+      string title = "february";
+      string products = "apples";
+      Order newOrder = new Order(title, products);
+      string newProduct = "oranges";
+      newOrder.Products = newProduct;
+      string result = newOrder.Products;
+      Assert.AreEqual(newProduct, result);
+    }
   }
 }
