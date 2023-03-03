@@ -32,6 +32,10 @@ namespace VendorOrder.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object> ();
       Vendor selectedVendor = Vendor.Find(id);
+      List<Order> Orders = selectedVendor.Orders;
+      model.Add("Vendor", selectedVendor);
+      model.Add("Orders", Orders);
+      return View(model);
     }
   }
 }
