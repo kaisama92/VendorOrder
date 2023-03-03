@@ -89,5 +89,32 @@ namespace VendorOrder.Tests
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string name1 = "vendor1";
+      string name2 = "vendor2";
+      string description1 = "restaurant";
+      string description2 = "caterer";
+      Vendor vendor1 = new Vendor(name1, description1);
+      Vendor vendor2 = new Vendor(name2, description2);
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(vendor2, result);
+    }
+
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      Order newOrder = new Order();
+      List<Order> orderList = new List<Order> {newOrder};
+      string name = "vendor";
+      string description = "restaurant";
+      Vendor newVendor = new Vendor(name, description);
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(orderList, result);
+      
+    }
   }
 }
