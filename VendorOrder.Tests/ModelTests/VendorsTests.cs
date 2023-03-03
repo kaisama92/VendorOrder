@@ -115,7 +115,7 @@ namespace VendorOrder.Tests
       Vendor newVendor = new Vendor(name, description);
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
-      CollectionAssert.AreEqual(orderList, result);
+      CollectionAssert.AreEqual(orderList, result); 
       
     }
   }
