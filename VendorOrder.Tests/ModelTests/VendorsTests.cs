@@ -106,7 +106,9 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
-      Order newOrder = new Order();
+      string title = "february";
+      string products = "apples";
+      Order newOrder = new Order(title, products);
       List<Order> orderList = new List<Order> {newOrder};
       string name = "vendor";
       string description = "restaurant";
