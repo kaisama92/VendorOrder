@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+@using VendorOrder.Models
+
+<h1>Create A New Vendor Order To @Model.Name</h1>
+
+<form action="/vendors/@Model.Id/orders">
+  <label for="orderTitle">Name your order:</label>
+  <input type="text" id="orderTitle" name="orderTitle" placeholder="date or month">
+  <label for="products">Products Needed</label>
+  <input type="text" name="products" id="products">
+  <button type="submit">Submit Order</button>
+</form>
+
+<h4><a href="/vendors/@Model.Id">Or Cancel</a></h4>
