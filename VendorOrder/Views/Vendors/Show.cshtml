@@ -5,7 +5,7 @@
 
 <h1>Here are all the orders for this vendor: @Model["Vendor"].Name</h1>
 
-@if (Model.Orders.Count == 0)
+@if (Model["Orders"].Count == 0)
 {
   <h2>They have not made any orders.</h2>
 }
@@ -17,4 +17,6 @@
   }
 </ol>
 
-<h4><a href=""></a></h4>
+<h4><a href='/vendors/@Model["Orders"].Id/orders/new'></a>Add a new Order</h4>
+<h4><a href="/vendors"> Return to Vendor List</a></h4>
+<h4><a href="/">Return to HomePage</a></h4>
