@@ -9,9 +9,9 @@ namespace VendorOrder.Models
     public string Title { get; set; }
     public int Id { get;}
     public string Products { get; set; }
-    public Order(string name, string products)
+    public Order(string orderTitle, string products)
     {
-      Title = name;
+      Title = orderTitle;
       Products = products;
       _instances.Add(this);
       Id = _instances.Count;
